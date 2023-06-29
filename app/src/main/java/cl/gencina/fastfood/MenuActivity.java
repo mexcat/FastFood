@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cl.gencina.fastfood.databinding.ActivityMenuBinding;
 
@@ -33,13 +34,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void createMenuList() {
-        //ArrayList listaMenu = new ArrayList();
+        List<String> listaMenu = new ArrayList();
 
-        String listaMenu[]
-                = {  "Puré de calabacín" ,"Tortilla de patatas","Albóndigas de pollo","Ensalada de tomate","Leche, pan con aceite y fruta","Lentejas vegetales","Croquetas de atún"};
-
-
-       /* listaMenu.add("Puré de calabacín");
+        listaMenu.add("Puré de calabacín");
         listaMenu.add("Tortilla de patatas");
         listaMenu.add("Albóndigas de pollo");
         listaMenu.add("Ensalada de tomate");
@@ -60,13 +57,8 @@ public class MenuActivity extends AppCompatActivity {
         listaMenu.add("Berenjenas rellenas	Guisantes con jamón");
         listaMenu.add("Pizza casera");
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(getApplicationContext(),binding.lvMenu,R.id.textView,listaMenu);
-        ArrayAdapter<String> arr;
-        arr = new ArrayAdapter<String>(
-                this,
-                binding.lvMenu,
-                listaMenu);
+        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(),android.R.layout.simple_list_item_1,listaMenu);
+        binding.lvMenu.setAdapter(adapter);
 
-        binding.lvMenu.setAdapter(listaMenu,);*/
     }
 }
